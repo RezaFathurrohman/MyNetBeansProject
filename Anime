@@ -1,0 +1,58 @@
+	package anime;
+	
+	abstract class KarakterAnime {
+	    protected String nama;
+	    
+	    public KarakterAnime(String nama) {
+	        this.nama = nama;
+	    }
+	    
+	    public abstract void jurusSpesial();
+	}
+	
+	class Shonen extends KarakterAnime {
+	    public Shonen(String nama) {
+	        super(nama);
+	    }
+	
+	    @Override
+	    public void jurusSpesial() {
+         System.out.println(nama + " menggunakan serangan super power khas shonen!");
+	    }
+	}
+	
+	class Isekai extends KarakterAnime {
+	    public Isekai(String nama) {
+	        super(nama);
+	    }
+	
+	    @Override
+	    public void jurusSpesial() {
+	        System.out.println(nama + " menggunakan kekuatan overpower dari dunia lain!");
+	    }
+	}
+	
+	class Mecha extends KarakterAnime {
+	    public Mecha(String nama) {
+	        super(nama);
+	    }
+	
+	    @Override
+	    public void jurusSpesial() {
+	        System.out.println(nama + " mengendalikan robot raksasa untuk bertarung!");
+	    }
+	}
+	
+	public class Main {
+	    public static void main(String[] args) {
+	        KarakterAnime[] karakter = {
+	            new Shonen("Luffy"),
+	            new Isekai("Kirito"),
+	            new Mecha("Amuro Ray")
+	        };
+	
+	        for (KarakterAnime k : karakter) {
+	            k.jurusSpesial();
+	        }
+	    }
+	}
